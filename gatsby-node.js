@@ -133,7 +133,7 @@ async function getPosts({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpPosts {
       # Query all WordPress blog posts sorted by date
-      allWpPost(sort: { fields: [date], order: DESC }) {
+      allWpCoachBlog(sort: { fields: [date], order: DESC }) {
         edges {
           previous {
             id
@@ -162,5 +162,5 @@ async function getPosts({ graphql, reporter }) {
     return
   }
 
-  return graphqlResult.data.allWpPost.edges
+  return graphqlResult.data.allWpCoachBlog.edges
 }

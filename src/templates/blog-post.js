@@ -95,7 +95,7 @@ export const pageQuery = graphql`
     $previousPostId: String
     $nextPostId: String
   ) {
-    post: wpPost(id: { eq: $id }) {
+    post: wpCoachBlog(id: { eq: $id }) {
       id
       excerpt
       content
@@ -116,11 +116,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    previous: wpPost(id: { eq: $previousPostId }) {
+    previous: wpCoachBlog(id: { eq: $previousPostId }) {
       uri
       title
     }
-    next: wpPost(id: { eq: $nextPostId }) {
+    next: wpCoachBlog(id: { eq: $nextPostId }) {
       uri
       title
     }

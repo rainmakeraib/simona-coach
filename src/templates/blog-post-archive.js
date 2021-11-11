@@ -10,16 +10,15 @@ const BlogIndex = ({
   data,
   pageContext: { nextPagePath, previousPagePath },
 }) => {
-  const posts = data.allWpPost.nodes
+  const posts = data.allWpCoachBlog.nodes
 
   if (!posts.length) {
     return (
       <Layout isHomePage>
-        <Seo title="All posts" />
+        <Seo title="Všetky články" />
         <Bio />
         <p>
-          No blog posts found. Add posts to your WordPress site and they'll
-          appear here!
+          Žiadne príspevky nenájdené!
         </p>
       </Layout>
     )
@@ -27,7 +26,7 @@ const BlogIndex = ({
 
   return (
     <Layout isHomePage>
-      <Seo title="All posts" />
+      <Seo title="Všetky články" />
 
       <Bio />
 
@@ -59,11 +58,11 @@ const BlogIndex = ({
 
       {previousPagePath && (
         <>
-          <Link to={previousPagePath}>Previous page</Link>
+          <Link to={previousPagePath}>Predchádzajúca stránka</Link>
           <br />
         </>
       )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+      {nextPagePath && <Link to={nextPagePath}>Nasledujúca stránka</Link>}
     </Layout>
   )
 }
@@ -72,7 +71,7 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
-    allWpPost(
+    allWpCoachBlog(
       sort: { fields: [date], order: DESC }
       limit: $postsPerPage
       skip: $offset
