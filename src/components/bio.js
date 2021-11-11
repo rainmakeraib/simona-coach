@@ -36,15 +36,14 @@ const Bio = () => {
       )}
       {author?.firstName && (
         <p>
-          Written by <strong>{author.firstName}</strong>
+          Napísala <strong>{author.firstName}</strong>
           {` `}
           {author?.description || null}
           {` `}
-          {author?.twitter && (
-            <a href={`https://twitter.com/${author?.twitter || ``}`}>
-              You should follow them on Twitter
-            </a>
-          )}
+          <br/>
+          <a href='https://www.instagram.com/simi.simkova/'>
+            Sleduj ma na Instagrame
+          </a>
         </p>
       )}
     </div>
